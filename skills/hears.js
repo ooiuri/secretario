@@ -22,7 +22,7 @@ module.exports = function(controller) {
     // it's using Discord.js for all this, yep that's right you have access to everything in Botkit AND Discord.js
     // https://discord.js.org/#/docs/main/master/class/User
     let recipient = message.mentions.users.filter(user => user.bot === false).last();
-
+    
     
     // this is a list of potential responses, it chooses from them randomly.
     // Try changing them or adding your own. 
@@ -37,4 +37,10 @@ module.exports = function(controller) {
     
     bot.reply(message, response);
   });
+
+  controller.hears('hello','direct_message',(bot, message) => {
+      bot.reply(message, 'how goes there :)!');
+  });
 }; 
+
+
