@@ -6,7 +6,7 @@
 // and the Botkit Discord code which has some great examples! 
 // https://github.com/brh55/botkit-discord
 
-const prefix = '+';
+const prefix = 
 
 module.exports = function(controller) {
   controller.hears("thanks", ['direct_mention','ambient'], (bot, message) => {
@@ -45,12 +45,12 @@ module.exports = function(controller) {
       bot.reply(message, 'how goes there :)!');
   });
   */
-  controller.hears("hello", ['direct_mention','ambient'], (bot, message) => {
+  controller.hears("hello", ['direct_message','direct_mention','ambient'], (bot, message) => {
     bot.reply(message, 'leave me to be please.');
   });
   
-  controller.hears('ping', ['direct_mention','ambient'], (bot,message)=>{
-    bot.reply(message, 'pong');
+  controller.hears('!ping', ['direct_message','direct_mention','ambient'], (bot,message)=>{
+    bot.reply(message, 'pong!');
   })
 }; 
 
