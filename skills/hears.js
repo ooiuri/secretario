@@ -10,7 +10,7 @@
 
 module.exports = function(controller) {
   const prefix = '!';
-  controller.hears("thanks", ['direct_mention','ambient'], (bot, message) => {
+  controller.hears(["valeu","obrigado"], ['direct_mention','ambient'], (bot, message) => {
     
     let response;
     let sender = message.user;
@@ -30,10 +30,10 @@ module.exports = function(controller) {
     // this is a list of potential responses, it chooses from them randomly.
     // Try changing them or adding your own. 
     let responses = [
-      `${recipient} parabenizou ${sender}! 🎉`,
+      `${sender} parabenizou ${recipient}! 🎉`,
       `${sender} acha que ${recipient} é o brabo! ✨`,
-      `Oi ${recipient}! ${sender} appreciates you! 😍`,
-      `Hey ${recipient}! ${sender} thinks you rule! 💪`
+      `Oi ${recipient}! ${sender} agradeceu demais! 😍`,
+      `Alô ${recipient}! ${sender} mandou um salve! 💪`
     ]
 
     response = responses[Math.floor(Math.random() * responses.length)];
