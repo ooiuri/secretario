@@ -30,9 +30,9 @@ module.exports = function(controller) {
     // this is a list of potential responses, it chooses from them randomly.
     // Try changing them or adding your own. 
     let responses = [
-      `${recipient} got kudos from ${sender} 🎉`,
-      `${sender} thinks ${recipient} is awesome! ✨`,
-      `Hey ${recipient}! ${sender} appreciates you! 😍`,
+      `${recipient} parabenizou ${sender}! 🎉`,
+      `${sender} acha que ${recipient} é o brabo! ✨`,
+      `Oi ${recipient}! ${sender} appreciates you! 😍`,
       `Hey ${recipient}! ${sender} thinks you rule! 💪`
     ]
 
