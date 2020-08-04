@@ -9,7 +9,7 @@
 const prefix = '+';
 
 module.exports = function(controller) {
-  controller.hears(${prefix+"thanks", ['direct_mention','ambient'], (bot, message) => {
+  controller.hears("thanks", ['direct_mention','ambient'], (bot, message) => {
     
     let response;
     let sender = message.user;
@@ -45,9 +45,13 @@ module.exports = function(controller) {
       bot.reply(message, 'how goes there :)!');
   });
   */
-  controller.hears(prefix+'hello', ['direct_mention','ambient'], (bot, message) => {
+  controller.hears("hello", ['direct_mention','ambient'], (bot, message) => {
     bot.reply(message, 'leave me to be please.');
   });
+  
+  controller.hears('ping', ['direct_mention','ambient'], (bot,message)=>{
+    bot.reply(message, 'pong');
+  })
 }; 
 
 
