@@ -7,7 +7,7 @@
 // https://github.com/brh55/botkit-discord
 
 module.exports = function(controller) {
-  controller.hears("$thanks", ["direct_mention", "mention"], (bot, message) => {
+  controller.hears("thanks", ['direct_mention','ambient'], (bot, message) => {
     
     let response;
     let sender = message.user;
@@ -37,13 +37,13 @@ module.exports = function(controller) {
     
     bot.reply(message, response);
   });
-
-  controller.hears('hello',["direct_message", "direct_mention"],(bot, message) => {
+/*
+  controller.hears('hello',["direct_message"],(bot, message) => {
       console.log("entrei");
       bot.reply(message, 'how goes there :)!');
   });
-  
-  controller.hears('.*', 'direct_mention', (bot, message) => {
+  */
+  controller.hears('hello', ['direct_mention','ambient'], (bot, message) => {
     bot.reply(message, 'leave me to be please.');
   });
 }; 
