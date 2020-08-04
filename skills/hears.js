@@ -54,6 +54,10 @@ module.exports = function(controller) {
     console.log(prefix + 'ping');
     bot.reply(message, 'pong!');
   })
+  
+  controller.hears('boa noite', ['direct_message','direct_mention','ambient'], (bot,message)=>{
+    bot.reply(message, 'para! 😍');
+  })
 }; 
 
 
