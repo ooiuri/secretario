@@ -6,9 +6,10 @@
 // and the Botkit Discord code which has some great examples! 
 // https://github.com/brh55/botkit-discord
 
-const prefix = 
+
 
 module.exports = function(controller) {
+  const prefix = '!';
   controller.hears("thanks", ['direct_mention','ambient'], (bot, message) => {
     
     let response;
@@ -49,7 +50,8 @@ module.exports = function(controller) {
     bot.reply(message, 'leave me to be please.');
   });
   
-  controller.hears('!ping', ['direct_message','direct_mention','ambient'], (bot,message)=>{
+  controller.hears(prefix + 'ping', ['direct_message','direct_mention','ambient'], (bot,message)=>{
+    console.log(prefix + 'ping');
     bot.reply(message, 'pong!');
   })
 }; 
