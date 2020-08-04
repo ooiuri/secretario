@@ -7,7 +7,7 @@
 // https://github.com/brh55/botkit-discord
 
 module.exports = function(controller) {
-  controller.hears("!thanks", ["direct_mention", "mention"], (bot, message) => {
+  controller.hears("$thanks", ["direct_mention", "mention"], (bot, message) => {
     let response;
     let sender = message.user;
     
