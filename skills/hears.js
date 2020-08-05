@@ -46,8 +46,8 @@ module.exports = function(controller) {
       bot.reply(message, 'how goes there :)!');
   });
   */
-  controller.hears("hello", ['direct_message','direct_mention','ambient'], (bot, message) => {
-    bot.reply(message, 'leave me to be please.');
+  controller.hears("olá", ['direct_message','direct_mention','ambient'], (bot, message) => {
+    bot.reply(message, 'oi .');
   });
   
   controller.hears(prefix + 'ping', ['direct_message','direct_mention','ambient'], (bot,message)=>{
