@@ -52,11 +52,19 @@ module.exports = function(controller) {
   
   controller.hears(prefix + 'ping', ['direct_message','direct_mention','ambient'], (bot,message)=>{
     console.log(prefix + 'ping');
-    bot.reply(message, 'pong!');
+    bot.reply(message, 'pong! :smile: ');
   })
   
-  controller.hears('boa noite', ['direct_message','direct_mention','ambient'], (bot,message)=>{
-    bot.reply(message, 'para! 😍');
+  controller.hears('lindo', ['direct_message','direct_mention','ambient'], (bot,message)=>{
+    bot.reply(message, 'para! 😍 '); 
+  })
+  
+  controller.hears('acho', ['direct_message','direct_mention','ambient'], (bot,message)=>{
+    bot.reply(message, 'engenheiro não acha! 💪');
+  })
+  
+  controller.hears('amo', ['direct_message','direct_mention','ambient'], (bot,message)=>{
+    bot.reply(message, 'o amor é lindo! 😍');
   })
 }; 
 
