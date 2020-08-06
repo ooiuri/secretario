@@ -6,6 +6,14 @@
 // and the Botkit Discord code which has some great examples! 
 // https://github.com/brh55/botkit-discord
 
+// required for google sheet
+var sheets = require('../modules/sheets');
+var bizIdea = require('../utils/generateStartup');
+var formatData = require('../utils/formatData');
+
+ sheets.SPREADSHEET_KEY = process.env.SPREADSHEET_URL.substr(39, process.env.SPREADSHEET_URL.length).split("/")[0]
+ sheets.API_URL = process.env.API_URL;
+
 
 
 module.exports = function(controller) {
@@ -47,7 +55,7 @@ module.exports = function(controller) {
   });
   */
   controller.hears("olá", ['direct_message','direct_mention','ambient'], (bot, message) => {
-    bot.reply(message, 'oi .');
+    bot.reply(message, 'oi.');
   });
   
   controller.hears(prefix + 'ping', ['direct_message','direct_mention','ambient'], (bot,message)=>{
@@ -65,6 +73,31 @@ module.exports = function(controller) {
   
   controller.hears('amo', ['direct_message','direct_mention','ambient'], (bot,message)=>{
     bot.reply(message, 'o amor é lindo! 😍');
+  })
+  
+  
+
+  
+  
+  /***    COMANDOS COM GOOGLE SHEETS    ***/
+  
+  
+  // List out all ideas in the Google Spreadsheet
+// Example of how to return a list in Discord
+  controller.hears('ideias', ['direct_message','direct_mention','ambient'], (bot,message)=>{
+    let sender = message.user.toString();
+      bot.reply(message, `Hey ${sender}. I have SO MANY good ideas, for example...`)  
+
+      sheets.getData(1)
+      .then(function(data){
+          console.log("aqui deu certo");
+          let response = bizIdea.generateStartup(data)
+          bot.reply(message, `${response}`)
+        })
+        .catch(function(error) {
+        
+          bot.reply(message, `Actually, nevermind...the world isn't ready for my ideas.`)
+        })
   })
 }; 
 

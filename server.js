@@ -11,6 +11,9 @@ const app = express();
 
 const discordBot = require("./bot");
 
+
+var sheets = require('./modules/sheets');
+
 // this is the code for the guides
 app.use(require('./guides'));
 
